@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipul Reddy Etikela | Aspiring Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-color: #0f172a;       /* Dark Navy */
+            --card-bg: #1e293b;        /* Lighter Navy */
+            --primary: #10b981;        /* Emerald Green (School & Trading) */
+            --secondary: #3b82f6;      /* Tech Blue */
+            --text-main: #f1f5f9;      /* Off-white */
+            --text-muted: #94a3b8;     /* Grey */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            text-align: center;
+            padding: 80px 0 40px;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.1) 0%, var(--bg-color) 100%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        header h2 {
+            font-size: 1.25rem;
+            color: var(--secondary);
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .quick-facts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .fact-badge {
+            background: var(--card-bg);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        /* --- MAIN CONTENT GRID --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+
+        /* --- ABOUT CARD --- */
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+
+        .highlight {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* --- SIDEBAR (Skills & Basketball) --- */
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            margin: 0 5px 5px 0;
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-section {
+            margin-bottom: 80px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 3px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: #253146;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- FOOTER & CONTACT --- */
+        footer {
+            background: var(--card-bg);
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #334155;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px;
+        }
+
+        .btn-main:hover {
+            background: #059669;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            border: 2px solid var(--text-muted);
+            color: var(--text-muted);
+            padding: 10px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Vipul Reddy Etikela</h1>
+            <h2>Aspiring Trading Software Developer & Student</h2>
+            
+            <div class="quick-facts">
+                <span class="fact-badge"><i class="fas fa-map-marker-alt"></i> Dublin, CA</span>
+                <span class="fact-badge"><i class="fas fa-graduation-cap"></i> Emerald HS Class of 2027</span>
+                <span class="fact-badge"><i class="fas fa-chart-line"></i> Market Analyst</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-grid">
+            
+            <section class="about-text">
+                <h2 class="section-title">My Journey</h2>
+                <p>
+                    I am a high school student passionately working towards a career as a <span class="highlight">software developer in the financial markets</span>. My ultimate goal is to bridge the gap between financial theory and technical execution by developing software that supports data-driven trading decisions.
+                </p>
+                <p>
+                    My journey began with independent study, transitioning from paper trading to managing a live capital account. Through disciplined day trading, I’ve generated consistent returns by adhering to a strict methodology—proving that <span class="highlight">trading isn't gambling</span>, but a process that requires evidence, logic, and software support.
+                </p>
+                <p>
+                    <strong>The Methodology:</strong> I maintain a detailed trade journal to analyze patterns in both winning and losing trades. When I identify a gap in my strategy, I utilize AI tools and data analysis to refine my rules. This rigorous attention to detail is what I plan to bring to my future software development projects.
+                </p>
+            </section>
+
+            <aside>
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-basketball-ball"></i> Beyond the Charts</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">
+                        I currently play for the <strong>Emerald High School freshman basketball team</strong>. Basketball has been a driving factor in my personal growth, teaching me that effective communication on and off the court is essential for success.
+                    </p>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3><i class="fas fa-code"></i> Skills & Focus</h3>
+                    <div style="margin-top: 10px;">
+                        <span class="skill-tag">Market Analysis</span>
+                        <span class="skill-tag">Day Trading</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">AI Tools</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Future Projects</h2>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">
+                I am currently working on expanding my portfolio to include technical stress-tests of trading engines.
+            </p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><i class="fas fa-cogs"></i> Trading Engine Analysis</h3>
+                    <p style="color: var(--text-muted);">
+                        A comparative study testing current trading engines against my personal trading methodology and notes.
+                    </p>
+                    <a href="#" class="project-link">View Project (Coming Soon) &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3><i class="fas fa-laptop-code"></i> Trade System Modeling</h3>
+                    <p style="color: var(--text-muted);">
+                        Developing a software model that replicates my specific parameters for entry and exit strategies.
+                    </p>
+                    <a href="#" class="project-link">View Project (Coming Soon) &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="color: var(--text-main); margin-bottom: 20px;">Let's Connect</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Thank you for reading my page. I encourage you to explore my work and progression as a developing trader and student.
+            </p>
+            
+            <a href="mailto:etikelavipul@gmail.com" class="btn-main">
+                <i class="fas fa-envelope"></i> Email Me
+            </a>
+            
+            <a href="#" class="btn-outline">
+                <i class="fas fa-file-alt"></i> Download Resume
+            </a>
+        </div>
+        <div style="margin-top: 40px; color: var(--text-muted); font-size: 0.8rem;">
+            &copy; 2026 Vipul Reddy Etikela. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
